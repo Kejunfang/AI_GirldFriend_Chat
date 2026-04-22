@@ -230,21 +230,3 @@ TRUNCATE TABLE memories, messages, conversations, users CASCADE;
 ```bash
 npm run db:seed
 ```
-
-## 上传到 GitHub 前要注意什么
-
-- 不要提交 `.env.local`
-- 不要提交 `.env`
-- 不要提交 `.next`
-- 不要提交 `node_modules`
-- 不要提交任何真实 API key
-
-仓库里已经保留了 `.env.example`，别人只需要复制它并填自己的配置即可。
-
-## 后续扩展建议
-
-- 把角色设定从浏览器本地存储升级到数据库持久化
-- 增加多用户登录
-- 接入微信公众号 / 企业微信
-- 把语音从浏览器原生 API 升级为服务端音频链路
-- 增加更精细的记忆提炼与召回策略
