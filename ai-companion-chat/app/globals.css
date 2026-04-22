@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --background: #f7f1e8;
+  --foreground: #24343b;
+  --panel: rgba(255, 250, 246, 0.78);
+  --panel-border: rgba(94, 122, 111, 0.12);
+  --muted: #667a73;
+  --accent: #5e7a6f;
+  --accent-soft: rgba(94, 122, 111, 0.12);
+  --user-bubble: #30484f;
+  --user-bubble-text: #f8faf7;
+  --assistant-bubble: rgba(255, 252, 248, 0.92);
+  --assistant-bubble-text: #2b3c43;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  height: 100%;
+  overflow: hidden;
+  color: var(--foreground);
+  background:
+    radial-gradient(circle at top left, rgba(233, 215, 206, 0.88), transparent 32%),
+    radial-gradient(circle at top right, rgba(197, 215, 204, 0.72), transparent 28%),
+    linear-gradient(180deg, #faf4eb 0%, #f4efe7 42%, #eef2ee 100%);
+  font-family: "Avenir Next", "SF Pro Text", "PingFang SC", "Hiragino Sans GB", sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.18) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-size: 56px 56px;
+  opacity: 0.18;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(94, 122, 111, 0.2);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(94, 122, 111, 0.26);
+  border-radius: 999px;
+}
+
+@layer components {
+  .ambient-panel {
+    border: 1px solid var(--panel-border);
+    background: var(--panel);
+    box-shadow: 0 24px 80px -32px rgba(36, 52, 59, 0.38);
+    backdrop-filter: blur(24px);
+  }
+
+  .subtle-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    border-radius: 999px;
+    border: 1px solid rgba(94, 122, 111, 0.14);
+    background: rgba(255, 255, 255, 0.5);
+    padding: 0.35rem 0.7rem;
+    font-size: 0.72rem;
+    color: #53645d;
+    letter-spacing: 0.01em;
+  }
+}
